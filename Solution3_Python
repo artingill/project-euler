@@ -1,0 +1,42 @@
+# Project Euler question 3
+# solved in Python 3.6.0
+
+"""
+Largest prime factor
+Problem 3
+
+The prime factors of 13195 are 5, 7, 13 and 29.
+
+What is the largest prime factor of the number 600851475143 ?
+"""
+import math
+import time
+
+start = time.time()
+
+def prime_check(x):
+    if x < 2:
+        return False
+    for i in range(2, int(math.sqrt(x))):
+        if not x % i:
+            return False
+    return True
+
+def largest_prime_factor(n):
+    for i in range(2, int(math.sqrt(n))):
+        if n % i == 0:
+            n = n/i
+            if prime_check(n) is True:
+                max_prime = n
+                break
+        else:
+            i += 1
+    return int(max_prime)
+    
+s = largest_prime_factor(600851475143)
+    
+elapsed = time.time() - start
+                
+print("The largest prime factor of the number 600851475143 is %s. (returned in %s seconds)" % (s,elapsed)) 
+
+# Prints "The largest prime factor of the number 600851475143 is 6857. (returned in 0.0 seconds)"
