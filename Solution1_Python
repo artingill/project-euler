@@ -1,0 +1,24 @@
+# Project Euler question 1
+# solved in Python 3.6.0
+
+"""
+Multiples of 3 and 5
+Problem 1
+
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. 
+The sum of these multiples is 23.
+
+Find the sum of all the multiples of 3 or 5 below 1000.
+"""
+
+import time
+
+start = time.time()
+
+s = sum(range(3,1000,3)) + sum(range(5,1000,5)) - sum (range(15,1000,15))
+
+elapsed = time.time() - start
+
+print("The sum of all the multiples of 3 or 5 below 1000 is %s. (returned in %s seconds)" % (s,elapsed))
+
+# Prints "The sum of all the multiples of 3 or 5 below 1000 is 233168. (returned in 0.0 seconds)"
