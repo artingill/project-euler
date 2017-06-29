@@ -1,0 +1,20 @@
+# Project Euler question 1
+# Solved in R 3.3.2
+
+# Multiples of 3 and 5
+# Problem 1
+ 
+#If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. 
+#The sum of these multiples is 23.
+ 
+#Find the sum of all the multiples of 3 or 5 below 1000.
+ 
+problem1 <- function(n1, m1, m2) {
+         mul1 <- seq(0, n1-1, by = m1)
+         mul2 <- seq(0, n1-1, by = m2)
+         multotal <- c(mul1, mul2)
+         return(sum(unique(multotal)))
+}
+
+problem1(1000, 3, 5)
+# Gives result 233168
