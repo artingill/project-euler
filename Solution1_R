@@ -9,12 +9,17 @@
  
 #Find the sum of all the multiples of 3 or 5 below 1000.
  
+ptm <- proc.time()
+
 problem1 <- function(n1, m1, m2) {
-         mul1 <- seq(0, n1-1, by = m1)
-         mul2 <- seq(0, n1-1, by = m2)
-         multotal <- c(mul1, mul2)
-         return(sum(unique(multotal)))
+  mul1 <- seq(0, n1-1, by = m1)
+  mul2 <- seq(0, n1-1, by = m2)
+  multotal <- c(mul1, mul2)
+  return(sum(unique(multotal)))
 }
 
-problem1(1000, 3, 5)
-# Gives result 233168
+solution1 <- problem1(1000, 3, 5)
+total_time <- (proc.time() - ptm)[3]
+
+cat(sprintf("\nThe answer is: %d \nTotal elapsed time: %f seconds\n", solution1, total_time))
+# Prints "The answer is: 233168 Total elapsed time: 0.010000 seconds"
